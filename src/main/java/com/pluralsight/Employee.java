@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.regex.Pattern;
+
 public class Employee {
     private int employedId;
     private String name;
@@ -12,7 +14,13 @@ public class Employee {
         this.hoursWorked = hoursWorked;
         this.payRate = payRate;
     }
-    
+    public Employee(String line){
+        String[] employee = line.split(Pattern.quote("|"));
+        this.employedId = Integer.parseInt(employee[0]);
+        this.name = employee[1];
+        this.hoursWorked = Double.parseDouble(employee[2]);
+        this.payRate = Double.parseDouble(employee[3]);
+    }
 
 
 

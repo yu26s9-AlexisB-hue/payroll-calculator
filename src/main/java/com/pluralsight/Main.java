@@ -5,8 +5,7 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args){
         try {
-            BufferedReader bufferedReader = new BufferedReader(
-                    new FileReader("Files/employees.csv"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("Files/employees.csv"));
 
             String line;
 
@@ -14,21 +13,11 @@ public class Main {
             bufferedReader.readLine();
 
             while ((line = bufferedReader.readLine()) != null) {
-                String[] employee = line.split(Pattern.quote("|"));
-                int Id = Integer.parseInt(employee[0]);
-                String n = employee[1];
-                double hoursWorked = Double.parseDouble(employee[2]);
-                double payRate = Double.parseDouble(employee[3]);
 
-                Employee e = new Employee();
+                Employee e = new Employee(line);
 
-                e.setEmployedId(Id);
-                e.setName(n);
-                e.setHoursWorked(hoursWorked);
-                e.setPayRate(payRate);
-
-                // Print full line
-                System.out.printf("These are your employees %d %s %.2f/n",e.getEmployedId(),e.getName(),e.getGrossPay());
+                // Print full line just relized my \n was using the wrong slash
+                System.out.printf("Employees and Gross pay: %d %s %.2f\n",e.getEmployedId(),e.getName(),e.getGrossPay());
 
             }
 
