@@ -32,6 +32,9 @@ public class Main {
                 // Print full line just relised my \n was using the wrong slash
                 System.out.printf("Employees and Gross pay: %d %s %.2f\n",e.getEmployedId(),e.getName(),e.getGrossPay());
 
+                //Write to the file
+                bufferedWriter.write(e.getEmployedId() + "|" + e.getName() + "|" + e.getGrossPay()+"\n");
+
             }
             bufferedReader.close();
             bufferedWriter.close();
