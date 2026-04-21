@@ -1,15 +1,11 @@
 package com.pluralsight;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args){
 
-    }
-
-    private static void getEmployeeId(){
 
     }
 
-    private static void getGrossPay(){
 
-    }
 }

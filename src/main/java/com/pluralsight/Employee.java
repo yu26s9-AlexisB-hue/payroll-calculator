@@ -1,23 +1,23 @@
 package com.pluralsight;
 
 public class Employee {
-    private long employedId;
+    private int employedId;
     private String name;
     private double hoursWorked;
     private double payRate;
 
-    public Employee(long employedId, String name, double hoursWorked, double payRate) {
+    public Employee(int employedId, String name, double hoursWorked, double payRate) {
         this.employedId = employedId;
         this.name = name;
         this.hoursWorked = hoursWorked;
         this.payRate = payRate;
     }
 
-    public long getEmployedId() {
+    public int getEmployedId() {
         return employedId;
     }
 
-    public void setEmployedId(long employedId) {
+    public void setEmployedId(int employedId) {
         this.employedId = employedId;
     }
 
@@ -43,5 +43,15 @@ public class Employee {
 
     public void setPayRate(double payRate) {
         this.payRate = payRate;
+    }
+    private double getGrossPay(){
+        if (this.hoursWorked > 40){
+            double basePay = 40 * payRate;
+            double overTime = (hoursWorked - 40) * (payRate * 1.20);
+            return basePay + overTime;
+
+        }else{
+            return payRate;
+        }
     }
 }
