@@ -13,6 +13,7 @@ public class Employee {
         this.payRate = payRate;
     }
 
+
     public int getEmployedId() {
         return employedId;
     }
@@ -44,7 +45,7 @@ public class Employee {
     public void setPayRate(double payRate) {
         this.payRate = payRate;
     }
-    private double getGrossPay(){
+    public double getGrossPay(){
         if (this.hoursWorked > 40){
             double basePay = 40 * payRate;
             double overTime = (hoursWorked - 40) * (payRate * 1.20);
