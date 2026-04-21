@@ -62,7 +62,7 @@ public class Employee {
             return basePay + overTime;
 
         }else{
-            return payRate;
+            return hoursWorked * payRate;
         }
     }
 }
